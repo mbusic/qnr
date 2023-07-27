@@ -1,6 +1,9 @@
-package org.example;
+package org.example.studenti;
 
-public class Ucenik extends Osoba {
+import org.example.Osoba;
+import org.example.ZadovoljnaOsoba;
+
+public class Ucenik extends Osoba implements ZadovoljnaOsoba {
 
     private final float prosjek;
     private final String imePrezimeRazednika;
@@ -20,4 +23,7 @@ public class Ucenik extends Osoba {
         return this.imePrezimeRazednika;
     }
 
+    @Override public boolean jeZadovoljan() {
+        return prosjek > 4.5;
+    }
 }
