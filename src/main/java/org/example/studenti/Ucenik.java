@@ -24,6 +24,7 @@ public class Ucenik extends Osoba implements ZadovoljnaOsoba {
     }
 
     @Override public boolean jeZadovoljan() {
+        System.out.println("Ja sam zadovoljan učenik");
         return prosjek > 4.5;
     }
 }

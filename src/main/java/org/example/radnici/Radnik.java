@@ -18,6 +18,7 @@ public class Radnik extends Osoba implements ZadovoljnaOsoba {
     }
 
     @Override public boolean jeZadovoljan() {
+        System.out.println("Ja sam zadovoljan radnik");
         return brojRadnihSati < 30;
     }
 }

@@ -32,6 +32,7 @@ public class Student extends Osoba implements ZadovoljnaOsoba {
     }
 
     @Override public boolean jeZadovoljan() {
+        System.out.println("Ja sam zadovoljan student");
         return prosjek > 2 && imaDeckaIliCuru;
     }
 }
