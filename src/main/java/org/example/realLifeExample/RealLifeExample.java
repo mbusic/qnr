@@ -44,12 +44,6 @@ public class RealLifeExample {
         calculator.setOperandA(7);
         calculator.setOperandB(3);
 
-        Operation anonClass = new Operation() {
-            @Override public double calculate(double operandA, double operandB) {
-                return operandA + operandB;
-            }
-        };
-
         Operation lambda = (operandA, operandB) -> {
             var result = operandA - operandB;
             return result;
@@ -57,8 +51,15 @@ public class RealLifeExample {
 
         var result3 = calculator.calculate(lambda);
 
+        var result5 = calculator.calculate((op1, op2) -> op1 + op2);
 
+        // ovo znači: ajde kompajleru, napravi anonimnu klasu koja odgovara
+        // tipu argumenta od calculator.calculate (to je tip Operation),
+        // i kad je budeš implementirao, uzmi metodu add iz klase RealLifeExample
+        var result4 = calculator.calculate(RealLifeExample::add);
+    }
 
-
+    static double add(double operandA, double operandB) {
+        return operandA + operandB;
     }
 }
